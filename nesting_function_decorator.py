@@ -19,12 +19,12 @@ print oldFunc()
 #this entire thing can be achieved using decorator as shown below
 '''
 def addOne(myFunc):
-    def addOneInside():
-        return myFunc() + 1
+    def addOneInside(*args, **kwargs):#addedd *args, **kwargs
+        return myFunc(*args, **kwargs) + 1 #*args, **kwargs
     return addOneInside
 
 @addOne
-def oldFunc():
-    return 3
+def oldFunc(x = 45677):
+    return x
 
-print oldFunc()
+print oldFunc(565757)
